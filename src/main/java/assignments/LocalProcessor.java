@@ -73,4 +73,20 @@ public class LocalProcessor {
         }
 
     }
+
+    public static void main(String[] args) {
+        LocalProcessor processor = new LocalProcessor();
+        try {
+            String fileName = "\\src\\main\\resources\\text.txt";
+            String currentDirectory = System.getProperty("user.dir");
+            File file = new File(currentDirectory, fileName);
+            String absolutePath = file.getAbsolutePath();
+
+            System.out.println("Absolute path to text.txt: " + absolutePath);
+            processor.readFullProcessorName(new File(absolutePath));
+
+        } catch(Exception e){
+            e.getMessage();
+        }
+    }
 }
